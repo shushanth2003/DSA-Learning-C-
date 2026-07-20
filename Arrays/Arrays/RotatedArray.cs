@@ -10,22 +10,23 @@ namespace Arrays
     {
         public int[] nums;
         public int k;
-        public RotatedArray(int[] nums,int k)
+        public RotatedArray(int[] arr,int k)
         {
-            this.nums = nums;
+            this.nums = arr;
             this.k = k;
         }
-        public void rotateArray()
+
+        public void setRotateArray()
         {
             int n = nums.Length;
-            rotateReverse(nums, 0, n - 1);
-            rotateReverse(nums, k, n - 1);
-            rotateReverse(nums, 0, k - 1);
-
+            reverseRotate(nums, 0, n-1);
+            reverseRotate(nums, k, n - 1);
+            reverseRotate(nums, 0, k);
         }
-        public void rotateReverse(int[] nums, int start, int end)
+
+        public void reverseRotate(int[] nums, int start,int end)
         {
-            while(start<end)
+            while(start<=end)
             {
                 int temp = nums[start];
                 nums[start] = nums[end];
