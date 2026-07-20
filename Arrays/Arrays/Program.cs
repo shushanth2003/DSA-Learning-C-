@@ -23,8 +23,14 @@ namespace Arrays
             //{
             //    Console.WriteLine(sortedArray.nums[i]);
             //}
-            FindPeakElement findPeakElement = new FindPeakElement(arr);
-            Console.WriteLine("Find Peak Element : "+findPeakElement.getPeakElement());
+            //FindPeakElement findPeakElement = new FindPeakElement(arr);
+            //Console.WriteLine("Find Peak Element : "+findPeakElement.getPeakElement());
+            int[] nums = { 1, 2, 3, 4, 5, 6, 7 };
+            int k = 3;
+            RotatedArray rotatedArray = new RotatedArray(nums,k);
+            rotatedArray.rotateArray();
+            int[]res=rotatedArray.nums;
+            foreach (int items in res) Console.WriteLine("The result is " + items);
         }
     }
 }
